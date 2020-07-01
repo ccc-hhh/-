@@ -1,18 +1,16 @@
 # 独立成分分析将多源信号拆分成较大可能独立性的子成分，它最初不是用来降维，而是用于拆分重叠的信号。
 
 from sklearn import decomposition
-
-
-pca = decomposition.FastICA(n_components=2)
-X = pca.fit_transform(data.ix[:,:-1].values)
+ 
+fica = decomposition.FastICA(n_components=2)
+ 
+X = fica.fit_transform(iris.iloc[:,:-1].values)
+ 
 pos=pd.DataFrame()
 pos['X'] =X[:, 0]
 pos['Y'] =X[:, 1]
-pos['species'] = data['species']
-ax = pos.ix[pos['species']=='virginica'].
-plot(kind='scatter', x='X', y='Y', color='blue', label='virginica')
-ax = pos.ix[pos['species']=='setosa'].
-plot(kind='scatter', x='X', y='Y', color='green', label='setosa', ax=ax)
-pos.ix[pos['species']=='versicolor'].
-plot(kind='scatter', x='X', y='Y', color='red', label='versicolor', ax=ax)
-Out[42]:
+pos['species'] = iris['species']
+ 
+ax = pos[pos['species']=='virginica'].plot(kind='scatter', x='X', y='Y', color='blue', label='virginica')
+pos[pos['species']=='setosa'].plot(kind='scatter', x='X', y='Y', color='green', label='setosa', ax=ax)
+pos[pos['species']=='versicolor'].plot(kind='scatter', x='X', y='Y', color='red', label='versicolor', ax=ax)
