@@ -34,3 +34,6 @@
 
 ![Image](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/7.jpeg)
 
+8、TSNE
+
+![Image](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/8.jpg)
