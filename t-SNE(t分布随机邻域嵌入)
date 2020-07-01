@@ -1,0 +1,16 @@
+# t-SNE(t分布随机邻域嵌入)是一种用于探索高维数据的非线性降维算法。
+# 通过基于具有多个特征的数据点的相似性识别观察到的簇来在数据中找到模式，
+# 将多维数据映射到适合于人类观察的两个或多个维度。
+# 本质上是一种降维和可视化技术。
+# 使用该算法的最佳方法是将其用于探索性数据分析。
+
+from sklearn.manifold import TSNE
+ 
+iris_embedded = TSNE(n_components=2).fit_transform(iris.iloc[:,:-1])
+ 
+pos = pd.DataFrame(iris_embedded, columns=['X','Y'])
+pos['species'] = iris['species']
+ 
+ax = pos[pos['species']=='virginica'].plot(kind='scatter', x='X', y='Y', color='blue', label='virgnica')
+pos[pos['species']=='setosa'].plot(kind='scatter', x='X', y='Y', color='green', label='setosa', ax=ax)
+pos[pos['species']=='versicolor'].plot(kind='scatter', x='X', y='Y', color='red', label='versicolor', ax=ax)
