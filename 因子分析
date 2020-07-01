@@ -3,17 +3,16 @@
 # 是基于高斯潜在变量的一个简单线性模型，假设每一个观察值都是由低维的潜在变量加正态噪音构成。
 
 from sklearn import decomposition
-
-
-pca = decomposition.FactorAnalysis(n_components=2)
-X = pca.fit_transform(data.ix[:,:-1].values)
+ 
+fa = decomposition.FactorAnalysis(n_components=2)
+ 
+X = fa.fit_transform(iris.iloc[:,:-1].values)
+ 
 pos=pd.DataFrame()
 pos['X'] =X[:, 0]
 pos['Y'] =X[:, 1]
-pos['species'] = data['species']
-ax = pos.ix[pos['species']=='virginica'].
-plot(kind='scatter', x='X', y='Y', color='blue', label='virginica')
-ax = pos.ix[pos['species']=='setosa'].
-plot(kind='scatter', x='X', y='Y', color='green', label='setosa', ax=ax)
-pos.ix[pos['species']=='versicolor'].
-plot(kind='scatter', x='X', y='Y', color='red', label='versicolor', ax=ax)
+pos['species'] = iris['species']
+ 
+ax = pos[pos['species']=='virginica'].plot(kind='scatter', x='X', y='Y', color='blue', label='virginica')
+pos[pos['species']=='setosa'].plot(kind='scatter', x='X', y='Y', color='green', label='setosa', ax=ax)
+pos[pos['species']=='versicolor'].plot(kind='scatter', x='X', y='Y', color='red', label='versicolor', ax=ax)
