@@ -1,0 +1,11 @@
+# 平行坐标可以看到数据中的类别以及从视觉上估计其他的统计量。
+# 使用平行坐标时，每个点用线段联接，每个垂直的线代表一个属性，
+# 一组联接的线段表示一个数据点。可能是一类的数据点会更加接近。
+
+
+from pandas.tools.plotting import parallel_coordinates
+
+
+plt.figure()
+
+parallel_coordinates(data, 'species')
