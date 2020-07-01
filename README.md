@@ -34,4 +34,3 @@
 
 ![Image](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/7.jpeg)
 
-![Image](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/plane.png)
