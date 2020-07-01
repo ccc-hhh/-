@@ -7,17 +7,29 @@
 本文着重介绍7种基于iris数据集的多维数据可视化方法。
 
 1、Andrews曲线
-![Image text]( 这里是你的图片链接)
+
+![Image text](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/1.jpeg)
+
 2、平行坐标
+
+![Image text](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/2.jpeg)
 
 3、RadViz图
 
+![Image text](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/3.jpeg)
+
 4、因子分析
+
+![Image text](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/4.jpeg)
 
 5、主成分分析
 
+![Image text](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/5.jpeg)
+
 6、独立成分分析
+
+![Image text](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/6.jpeg)
 
 7、多维尺度分析
 
-
+![Image text](https://github.com/ccc-hhh/Multidimensional-Data-Visualization/blob/master/image/7.jpeg)
