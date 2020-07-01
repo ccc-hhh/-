@@ -8,18 +8,16 @@
 
 
 from sklearn import manifold
+ 
 from sklearn.metrics import euclidean_distances
-import pandas as pd
-
-
-similarities = euclidean_distances(data.ix[:,:-1].values)
+ 
+similarities = euclidean_distances(iris.iloc[:,:-1].values)
 mds = manifold.MDS(n_components=2, max_iter=3000, eps=1e-9, dissimilarity="precomputed", n_jobs=1)
 X = mds.fit(similarities).embedding_
+ 
 pos=pd.DataFrame(X, columns=['X', 'Y'])
-pos['species'] = data['species']
-ax = pos.ix[pos['species']=='virginica'].
-plot(kind='scatter', x='X', y='Y', color='blue', label='virginica')
-ax = pos.ix[pos['species']=='setosa'].
-plot(kind='scatter', x='X', y='Y', color='green', label='setosa', ax=ax)
-pos.ix[pos['species']=='versicolor'].
-plot(kind='scatter', x='X', y='Y', color='red', label='versicolor', ax=ax)
+pos['species'] = iris['species']
+ 
+ax = pos[pos['species']=='virginica'].plot(kind='scatter', x='X', y='Y', color='blue', label='virginica')
+pos[pos['species']=='setosa'].plot(kind='scatter', x='X', y='Y', color='green', label='setosa', ax=ax)
+pos[pos['species']=='versicolor'].plot(kind='scatter', x='X', y='Y', color='red', label='versicolor', ax=ax)
