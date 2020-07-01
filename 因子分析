@@ -1,0 +1,19 @@
+# 因子分析最初由心理学家斯皮尔曼发明，用于研究人类的人格特质。
+# 著名的卡特尔16PF（16种相对独立的人格特征）就是应用因素分析方法得来。
+# 是基于高斯潜在变量的一个简单线性模型，假设每一个观察值都是由低维的潜在变量加正态噪音构成。
+
+from sklearn import decomposition
+
+
+pca = decomposition.FactorAnalysis(n_components=2)
+X = pca.fit_transform(data.ix[:,:-1].values)
+pos=pd.DataFrame()
+pos['X'] =X[:, 0]
+pos['Y'] =X[:, 1]
+pos['species'] = data['species']
+ax = pos.ix[pos['species']=='virginica'].
+plot(kind='scatter', x='X', y='Y', color='blue', label='virginica')
+ax = pos.ix[pos['species']=='setosa'].
+plot(kind='scatter', x='X', y='Y', color='green', label='setosa', ax=ax)
+pos.ix[pos['species']=='versicolor'].
+plot(kind='scatter', x='X', y='Y', color='red', label='versicolor', ax=ax)
