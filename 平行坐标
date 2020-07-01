@@ -3,7 +3,7 @@
 # 一组联接的线段表示一个数据点。可能是一类的数据点会更加接近。
 
 
-from pandas.tools.plotting import parallel_coordinates
+from pandas.plotting import parallel_coordinates
 
 
 plt.figure()
