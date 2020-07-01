@@ -1,0 +1,23 @@
+#主成分分析是由因子分析进化而来的一种降维的方法。
+#通过正交变换将原始特征转换为线性独立的特征，转换后得到的特征被称为主成分。
+#主成分分析可以将原始维度降维到n个维度。
+#有一个特例情况，就是通过主成分分析将维度降低为2维，可以将多维数据转换为平面中的点，来达到多维数据可视化的目的。
+
+from sklearn import decomposition
+
+
+pca = decomposition.PCA(n_components=2)
+X = pca.fit_transform(data.ix[:,:-1].values)
+pos=pd.DataFrame()
+pos['X'] =X[:, 0]
+pos['Y'] =X[:, 1]
+pos['species'] = data['species']
+ax = pos.ix[pos['species']=='virginica'].
+plot(kind='scatter', x='X', y='Y', color='blue', label='virginica')
+ax = pos.ix[pos['species']=='setosa'].
+plot(kind='scatter', x='X', y='Y', color='green', label='setosa', ax=ax)
+pos.ix[pos['species']=='versicolor'].
+plot(kind='scatter', x='X', y='Y', color='red', label='versicolor', ax=ax)
+
+
+#需要注意，通过PCA降维实际上是损失了一些信息，我们也可以看一下保留的两个主成分可以解释原始数据的多少。
