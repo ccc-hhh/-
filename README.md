@@ -1,4 +1,4 @@
-# Visualization-of-high-dimensional-data
+# Multidimensional Data Visualization
 
 多维数据可视化是指通过一些手段将高维的数据展示在二维的平面中。
 
